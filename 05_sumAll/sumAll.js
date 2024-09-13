@@ -3,7 +3,16 @@ const sumAll = function (...arg) {
 
     if (arg[0] > arg[1]) {
         arg.reverse();
-    } else if (arg[0] < 0 || arg[1] < 0) {
+    } else if (
+        arg[0] < 0 ||
+        arg[1] < 0 ||
+        arg[0] % 1 !== 0 ||
+        arg[1] % 1 !== 0 ||
+        isNaN(arg[0]) ||
+        isNaN(arg[1])||
+        typeof(arg[0]) == "string" ||
+        typeof(arg[1]) == "string"
+        ) {
         return "ERROR";
     }
 
