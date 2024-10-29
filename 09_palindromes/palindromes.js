@@ -1,10 +1,8 @@
 const palindromes = function (...string) {
     let filtered = string
         .map(item => item.toLowerCase()) // for case insensitivity
-        .filter(item => typeof item === 'string') // omit all non alphabet
         .join('') //to convert the array back to string
-
-    filtered = filtered.replace(/[^a-z0-9]/g, ''); // filters all non-string items
+        .replace(/[^a-z0-9]/g, ''); // filters all non-string items
 
     let reversed = filtered
         .split('') //convert to array
